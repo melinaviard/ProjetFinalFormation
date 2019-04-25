@@ -27,20 +27,20 @@ import com.adaming.service.ClientServiceImpl;
 @RunWith(SpringRunner.class)
 @SpringBootTest(classes = SpringBootRunner.class)
 public class ServiceClientTest {
-	
+
 
 	//Declarer un logger
 	private static final Logger LOGGER = LoggerFactory.getLogger(ServiceClientTest.class);
 
-		
+
 	    private ClientServiceImpl clientService;
-		
-		
+
+
 	//Creer faux repository 
-		
+
 		@Mock
 	private IClientRepository clientRepository;
-	
+
 	/**
 	 * Preparing the class to accept the use of the @Mock annotation
 	 */
@@ -49,25 +49,58 @@ public class ServiceClientTest {
 	    MockitoAnnotations.initMocks(this);
 	   clientService = new ClientServiceImpl(clientRepository);
 	}
-	  
-	
 
-	// Test que methodes dao sont bien appelées par ce service là
+
+
+	// Test add
 	@Test
 	public void should_store_when_save_is_called() { 
 		LOGGER.info("--------------- Executing should_store_when_save_is_called test Of ClientServiceTest ---------------");
 		Client myClient = new Client();
-		clientService.save(myClient);
-		Mockito.verify(clientRepository).save(myClient); // pour tracker l'objet
+		clientService.add(myClient);
+		Mockito.verify(clientRepository).save(myClient); 
 	}
-	
-	@Test
-	public void should_update_when_update_is_called() {
-		LOGGER.info("--------------- Executing should_update_when_update_is_called test Of UserServiceImplTest ---------------");
-		Client myClient = new Client();
-		clientService.update(myClient);
-		Mockito.verify(clientRepository).save(myClient);
-	}
-	
-	
+
+//	@Test
+//	public void should_update_when_update_is_called() {
+//		LOGGER.info("--------------- Executing should_update_when_update_is_called test Of UserServiceImplTest ---------------");
+//		Client myClient = new Client();
+//		clientService.update(myClient);
+//		Mockito.verify(clientRepository).save(myClient);
+//	}
+//
+
+//
+//	// Test delete methode
+//	@Test
+//	public void should_delete_when_delete_is_called() {
+//		LOGGER.info("--------------- Executing should_delete_when_delete_is_called test Of ClientServiceTest  ---------------");
+//		Client client = new Client();
+//		clientService.delete(client);
+//		Mockito.verify(clientRepository).delete(client);
+//	}
+//	
+//	// Test findById methode ( findById(Integer id) )
+//	@Test
+//	public void should_search_by_id_when_findById_is_called() {
+//		LOGGER.info("--------------- Executing should_search_by_id_when_findById_is_called test Of ClientServiceTest  ---------------");
+//		clientService.findById(new Integer(1));
+//		Mockito.verify(clientRepository).findById(new Integer(1));
+//	}
+//
+//	// Test findAll methode
+//	@Test
+//	public void should_search_all_when_findAll_is_called() {
+//		LOGGER.info("--------------- Executing should_search_all_when_findAll_is_called test Of ClientServiceTest  ---------------");
+//		clientService.findAll();
+//		Mockito.verify(clientRepository).findAll();
+//	}
+//
+//	// Test findFirst1ByNomAndNom methode (findFirst1ByNomAndNom(String prenom, String nom)
+//	@Test
+//	public void should_search_by_user_when_findByUserCreator_is_called() {
+//		LOGGER.info("--------------- Executing should_search_by_user_when_findByUserCreator_is_called test Of ClientServiceTest  ---------------");
+//		clientService.findFirst1ByNomAndNom(new String ("prenom"), new String ("nom"));
+//		Mockito.verify(clientRepository).findFirst1ByNomAndNom(new String ("prenom"), new String ("nom"));
+//	}
 }

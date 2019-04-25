@@ -26,16 +26,16 @@ public class ClientController {
 	ClientServiceImpl clientService;
 	
 	//Get method
-	@GetMapping(value = "/all")
+	@GetMapping(value = "/all_client")
+
 	public List<Client> findAll() {
 		return clientService.findAll();
 	}
 
 	//Add method
-	@PostMapping(value = "/addclient", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
-	public Client addNewUser(@RequestBody Client client) {
+	public Client addClient(@RequestBody Client client) {
 		System.out.println(client.getNom());
-		return this.clientService.addClient(client);
+		return this.clientService.add(client);
 	}
 
 	//Update method
@@ -44,7 +44,7 @@ public class ClientController {
 		if (clientService.findById(id_client) == null) {
 			return null;
 		} else {
-			return clientService.addClient(client);
+			return clientService.add(client);
 		}
 	}
 	
