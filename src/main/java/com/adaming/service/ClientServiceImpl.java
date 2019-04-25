@@ -1,5 +1,4 @@
 
-
 package com.adaming.service;
 
 import java.util.Date;
@@ -22,7 +21,7 @@ public class ClientServiceImpl implements IClientService {
 	public ClientServiceImpl(IClientRepository clientRepository) {
 		this.clientRepository = clientRepository;
 	}
-	public Client save(Client client) {
+	public Client add(Client client) {
 		return  clientRepository.save(client);
 	}
 	
@@ -44,6 +43,11 @@ public class ClientServiceImpl implements IClientService {
 	
 	public Client findFirst1ByNomAndNom(String prenom, String nom) {
 		return clientRepository.findFirst1ByNomAndNom(prenom, nom);
+	}
+	@Override
+	public Client save(Client client) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 	
 }

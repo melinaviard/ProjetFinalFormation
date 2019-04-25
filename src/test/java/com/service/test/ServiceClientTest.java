@@ -52,12 +52,12 @@ public class ServiceClientTest {
 	  
 	
 
-	// Test que methodes dao sont bien appelées par ce service là
+	// Test que methodes dao sont bien appelï¿½es par ce service lï¿½
 	@Test
 	public void should_store_when_save_is_called() { 
 		LOGGER.info("--------------- Executing should_store_when_save_is_called test Of ClientServiceTest ---------------");
 		Client myClient = new Client();
-		clientService.save(myClient);
+		clientService.add(myClient);
 		Mockito.verify(clientRepository).save(myClient); // pour tracker l'objet
 	}
 	
