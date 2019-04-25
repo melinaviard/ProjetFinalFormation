@@ -7,11 +7,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.adaming.dao.IClientRepository;
-import com.adaming.entity.Client;
+import com.adaming.model.Client;
 
 
 @Service
-public abstract class ClientServiceImpl implements IClientService {
+public class ClientServiceImpl implements IClientService {
 
 	
 	@Autowired
@@ -25,7 +25,7 @@ public abstract class ClientServiceImpl implements IClientService {
 	}
 	
 	public Client update(Client client) {
-		return  null;
+		return  clientRepository.save(client);
 	}
 	
 	public void delete(Client client) {
@@ -43,6 +43,5 @@ public abstract class ClientServiceImpl implements IClientService {
 	public Client findFirst1ByNomAndNom(String prenom, String nom) {
 		return clientRepository.findFirst1ByNomAndNom(prenom, nom);
 	}
-	
 	
 }
