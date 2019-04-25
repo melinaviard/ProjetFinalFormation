@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 
 package com.adaming.service;
 
@@ -23,11 +22,11 @@ public class ClientServiceImpl implements IClientService {
 		this.clientRepository = clientRepository;
 	}
 	public Client add(Client client) {
-		return  null;
+		return  clientRepository.save(client);
 	}
 	
 	public Client update(Client client) {
-		return  clientRepository.save(client);
+		return  null;
 	}
 	
 	public void delete(Client client) {
@@ -50,4 +49,5 @@ public class ClientServiceImpl implements IClientService {
 		// TODO Auto-generated method stub
 		return null;
 	
+}
 }
