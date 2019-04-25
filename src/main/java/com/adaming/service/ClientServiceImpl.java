@@ -24,6 +24,10 @@ public class ClientServiceImpl implements IClientService {
 		return  clientRepository.save(client);
 	}
 	
+	public Client addClient(Client client) {
+		return  clientRepository.save(client);
+	}
+	
 	public Client update(Client client) {
 		return  clientRepository.save(client);
 	}
@@ -43,5 +47,7 @@ public class ClientServiceImpl implements IClientService {
 	public Client findFirst1ByNomAndNom(String prenom, String nom) {
 		return clientRepository.findFirst1ByNomAndNom(prenom, nom);
 	}
+	
+	
 	
 }

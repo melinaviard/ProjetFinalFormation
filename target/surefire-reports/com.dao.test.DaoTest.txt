@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
-Test set: com.service.test.ServiceClientTest
+Test set: com.dao.test.DaoTest
 -------------------------------------------------------------------------------
-Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.186 s - in com.service.test.ServiceClientTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 2.832 s - in com.dao.test.DaoTest
