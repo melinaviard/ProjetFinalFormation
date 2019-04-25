@@ -52,7 +52,7 @@ public class ServiceClientTest {
 	  
 	
 
-	// Test que methodes dao sont bien appel√©es par ce service l√†
+	// Test que methodes dao sont bien appelÈes par ce service l‡
 	@Test
 	public void should_store_when_save_is_called() { 
 		LOGGER.info("--------------- Executing should_store_when_save_is_called test Of ClientServiceTest ---------------");

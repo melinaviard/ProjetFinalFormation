@@ -7,7 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.adaming.dao.IClientRepository;
-import com.adaming.model.Client;
+import com.adaming.entity.Client;
 
 
 @Service
