@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
 package com.adaming.service;
 
@@ -48,6 +49,5 @@ public class ClientServiceImpl implements IClientService {
 	public Client save(Client client) {
 		// TODO Auto-generated method stub
 		return null;
-	}
 	
 }

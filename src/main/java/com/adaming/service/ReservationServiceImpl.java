@@ -39,19 +39,4 @@ public class ReservationServiceImpl implements IReservationService {
 	public List<Reservation> findAllReservation() {
 		return reservationRepository.findAll();
 	}
-	@Override
-	public Reservation findReservationByVehicule(Integer id_vehicule) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	
-//	public Reservation findReservationByVehicule(Integer id_vehicule) {
-//		return reservationRepository.findReservationByVehicule(id_vehicule);
-//	
-//}
-//	public Reservation findReservationByClient(String username) {
-//		return reservationRepository.findReservationByClient(username);
-//	}
-
 }

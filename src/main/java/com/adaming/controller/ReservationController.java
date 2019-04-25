@@ -47,15 +47,16 @@ public class ReservationController {
 		}
 	}
 	
-//	@PutMapping("/{nom_user}")
-//	public Reservation updatefReservation (@RequestBody Reservation reservation, @PathVariable String nom_user) {
-//		if(reservationService.findReservationByClient(nom_user)==null) {
-//			return null;
-//		}
-//		else {
-//			return reservationService.saveReservation(reservation);
-//		}
-//	}
+
+	@PutMapping("/{nom_user}")
+	public Reservation updatefReservation (@RequestBody Reservation reservation, @PathVariable String nom_user) {
+		if(reservationService.findReservationByClient(nom_user)==null) {
+			return null;
+		}
+		else {
+			return reservationService.saveReservation(reservation);
+		}
+	}
 
 	@DeleteMapping("/{id}")
 	public void deleteReservation(@PathVariable Integer id) {
