@@ -1,8 +1,0 @@
--------------------------------------------------------------------------------
-Test set: com.controller.test.ControllerTest
--------------------------------------------------------------------------------
-Tests run: 1, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 11.044 s <<< FAILURE! - in com.controller.test.ControllerTest
-createEntity(com.controller.test.ControllerTest)  Time elapsed: 0.348 s  <<< FAILURE!
-java.lang.AssertionError: expected:<200> but was:<404>
-	at com.controller.test.ControllerTest.createEntity(ControllerTest.java:91)
-
