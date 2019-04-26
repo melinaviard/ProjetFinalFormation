@@ -3,6 +3,7 @@ package com.adaming.service;
 
 import java.util.Date;
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -34,7 +35,8 @@ public class ClientServiceImpl implements IClientService {
 	}
 	
 	public Client findById(Integer id) {
-		return null;
+		Optional<Client> client = clientRepository.findById(id);
+	   return (client == null ? null : client.orElse(null));
 	}
 	
 	public List<Client> findAll() {
