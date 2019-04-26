@@ -91,19 +91,19 @@ public class ServiceClientTest {
 //		Mockito.verify(clientRepository).findById(new Integer(1));
 //	}
 
-	// Test findAll methode
-	@Test
-	public void should_search_all_when_findAll_is_called() {
-		LOGGER.info("--------------- Executing should_search_all_when_findAll_is_called test Of ClientServiceTest  ---------------");
-		clientService.findAll();
-		Mockito.verify(clientRepository).findAll();
-	}
-
-//	// Test findFirst1ByNomAndNom methode (findFirst1ByNomAndNom(String prenom, String nom)
+//	// Test findAll methode
 //	@Test
-//	public void should_search_by_user_when_findByUserCreator_is_called() {
-//		LOGGER.info("--------------- Executing should_search_by_user_when_findByUserCreator_is_called test Of ClientServiceTest  ---------------");
-//		clientService.findFirst1ByNomAndNom(new String ("prenom"), new String ("nom"));
-//		Mockito.verify(clientRepository).findFirst1ByNomAndNom(new String ("prenom"), new String ("nom"));
+//	public void should_search_all_when_findAll_is_called() {
+//		LOGGER.info("--------------- Executing should_search_all_when_findAll_is_called test Of ClientServiceTest  ---------------");
+//		clientService.findAll();
+//		Mockito.verify(clientRepository).findAll();
 //	}
+
+	// Test findFirst1ByNomAndNom methode (findFirst1ByNomAndNom(String prenom, String nom)
+	@Test
+	public void should_search_by_user_when_findByUserCreator_is_called() {
+		LOGGER.info("--------------- Executing should_search_by_user_when_findByUserCreator_is_called test Of ClientServiceTest  ---------------");
+		clientService.findFirst1ByNomAndNom(new String ("prenom"), new String ("nom"));
+		Mockito.verify(clientRepository).findFirst1ByNomAndNom(new String ("prenom"), new String ("nom"));
+	}
 }
