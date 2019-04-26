@@ -40,7 +40,7 @@ public class ClientServiceImpl implements IClientService {
 	}
 	
 	public List<Client> findAll() {
-		return null;
+		return clientRepository.findAll();
 	}
 	
 	public Client findFirst1ByNomAndNom(String prenom, String nom) {
