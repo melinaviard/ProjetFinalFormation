@@ -26,11 +26,12 @@ public class ClientServiceImpl implements IClientService {
 	}
 	
 	public Client update(Client client) {
-		return  null;
+		return  clientRepository.save(client);
 	}
 	
-	public void delete(Client client) {
+	public Client delete(Client client) {
 		clientRepository.delete(client);
+		return null;
 	}
 	
 	public Client findById(Integer id) {
