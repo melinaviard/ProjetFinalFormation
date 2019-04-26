@@ -52,14 +52,13 @@ public class ServiceClientTest {
 
 
 
-//	// Test que methodes dao sont bien appelées par ce service là
-//	@Test
-//	public void should_store_when_save_is_called() { 
-//		LOGGER.info("--------------- Executing should_store_when_save_is_called test Of ClientServiceTest ---------------");
-//		Client myClient = new Client();
-//		clientService.add(myClient);
-//		Mockito.verify(clientRepository).save(myClient); // pour tracker l'objet
-//	}
+	@Test
+	public void should_store_when_save_is_called() { 
+		LOGGER.info("--------------- Executing should_store_when_save_is_called test Of ClientServiceTest ---------------");
+		Client myClient = new Client();
+		clientService.add(myClient);
+		Mockito.verify(clientRepository).save(myClient); 
+	}
 
 //	@Test
 //	public void should_update_when_update_is_called() {
@@ -74,23 +73,23 @@ public class ServiceClientTest {
 	
 
 
-	// Test delete methode
-	@Test
-	public void should_delete_when_delete_is_called() {
-		LOGGER.info("--------------- Executing should_delete_when_delete_is_called test Of ClientServiceTest  ---------------");
-		Client client = new Client();
-		clientService.delete(client);
-		Mockito.verify(clientRepository).delete(client);
-	}
-	
-//	// Test findById methode ( findById(Integer id) )
+//	// Test delete methode
 //	@Test
-//	public void should_search_by_id_when_findById_is_called() {
-//		LOGGER.info("--------------- Executing should_search_by_id_when_findById_is_called test Of ClientServiceTest  ---------------");
-//		clientService.findById(new Integer(1));
-//		Mockito.verify(clientRepository).findById(new Integer(1));
+//	public void should_delete_when_delete_is_called() {
+//		LOGGER.info("--------------- Executing should_delete_when_delete_is_called test Of ClientServiceTest  ---------------");
+//		Client client = new Client();
+//		clientService.delete(client);
+//		Mockito.verify(clientRepository).delete(client);
 //	}
-//
+	
+	// Test findById methode ( findById(Integer id) )
+	@Test
+	public void should_search_by_id_when_findById_is_called() {
+		LOGGER.info("--------------- Executing should_search_by_id_when_findById_is_called test Of ClientServiceTest  ---------------");
+		clientService.findById(new Integer(1));
+		Mockito.verify(clientRepository).findById(new Integer(1));
+	}
+
 //	// Test findAll methode
 //	@Test
 //	public void should_search_all_when_findAll_is_called() {

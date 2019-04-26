@@ -34,7 +34,7 @@ public class ClientServiceImpl implements IClientService {
 	}
 	
 	public Client findById(Integer id) {
-		return clientRepository.findById(id).orElse(null);
+		return null;
 	}
 	
 	public List<Client> findAll() {
