@@ -45,7 +45,7 @@ public class ServiceClientTest {
 	 * Preparing the class to accept the use of the @Mock annotation
 	 */
 	@Before
-	  public final void setUp() {
+	  public  void init() {
 	    MockitoAnnotations.initMocks(this);
 	   clientService = new ClientServiceImpl(clientRepository);
 	}
@@ -80,7 +80,7 @@ public class ServiceClientTest {
 		LOGGER.info("--------------- Executing should_delete_when_delete_is_called test Of ClientServiceTest  ---------------");
 		Client client = new Client();
 		clientService.delete(client);
-		Mockito.verify(clientRepository).save(client);
+		Mockito.verify(clientRepository).delete(client);
 	}
 	
 //	// Test findById methode ( findById(Integer id) )
