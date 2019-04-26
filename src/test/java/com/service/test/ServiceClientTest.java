@@ -73,7 +73,7 @@ public class ServiceClientTest {
 
 	
 
-//
+
 //	// Test delete methode
 //	@Test
 //	public void should_delete_when_delete_is_called() {
@@ -83,22 +83,22 @@ public class ServiceClientTest {
 //		Mockito.verify(clientRepository).delete(client);
 //	}
 //	
-	// Test findById methode ( findById(Integer id) )
-	@Test
-	public void should_search_by_id_when_findById_is_called() {
-		LOGGER.info("--------------- Executing should_search_by_id_when_findById_is_called test Of ClientServiceTest  ---------------");
-		clientService.findById(new Integer(1));
-		Mockito.verify(clientRepository).findById(new Integer(1));
-	}
-//
-//	// Test findAll methode
+//	// Test findById methode ( findById(Integer id) )
 //	@Test
-//	public void should_search_all_when_findAll_is_called() {
-//		LOGGER.info("--------------- Executing should_search_all_when_findAll_is_called test Of ClientServiceTest  ---------------");
-//		clientService.findAll();
-//		Mockito.verify(clientRepository).findAll();
+//	public void should_search_by_id_when_findById_is_called() {
+//		LOGGER.info("--------------- Executing should_search_by_id_when_findById_is_called test Of ClientServiceTest  ---------------");
+//		clientService.findById(new Integer(1));
+//		Mockito.verify(clientRepository).findById(new Integer(1));
 //	}
-//
+
+	// Test findAll methode
+	@Test
+	public void should_search_all_when_findAll_is_called() {
+		LOGGER.info("--------------- Executing should_search_all_when_findAll_is_called test Of ClientServiceTest  ---------------");
+		clientService.findAll();
+		Mockito.verify(clientRepository).findAll();
+	}
+
 //	// Test findFirst1ByNomAndNom methode (findFirst1ByNomAndNom(String prenom, String nom)
 //	@Test
 //	public void should_search_by_user_when_findByUserCreator_is_called() {
