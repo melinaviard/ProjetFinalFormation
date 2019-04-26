@@ -44,7 +44,7 @@ public class ClientServiceImpl implements IClientService {
 	}
 	
 	public Client findFirst1ByNomAndNom(String prenom, String nom) {
-		return null;
+		return clientRepository.findFirst1ByNomAndNom(prenom, nom);
 	}
 	@Override
 	public Client save(Client client) {
