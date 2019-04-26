@@ -29,9 +29,8 @@ public class ClientServiceImpl implements IClientService {
 		return  clientRepository.save(client);
 	}
 	
-	public Client delete(Client client) {
+	public void delete(Client client) {
 		clientRepository.delete(client);
-		return null;
 	}
 	
 	public Client findById(Integer id) {

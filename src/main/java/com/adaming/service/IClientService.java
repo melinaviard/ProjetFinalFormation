@@ -16,7 +16,7 @@ public interface IClientService {
 
 		public Client update(Client client);
 
-		public Client delete(Client client);
+		public void delete(Client client);
 
 		public Client findById(Integer id);
 
