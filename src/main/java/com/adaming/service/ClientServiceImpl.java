@@ -10,6 +10,11 @@ import org.springframework.stereotype.Service;
 
 import com.adaming.dao.IClientRepository;
 import com.adaming.entity.Client;
+/**
+ * 
+ * @author IN-LY-023
+ *
+ */
 
 
 @Service
@@ -22,12 +27,12 @@ public class ClientServiceImpl implements IClientService {
 	public ClientServiceImpl(IClientRepository clientRepository) {
 		this.clientRepository = clientRepository;
 	}
-	public Client add(Client client) {
+	public Client save(Client client)  {
 		return  clientRepository.save(client);
 	}
 	
 	public Client update(Client client) {
-		return  clientRepository.save(client);
+		return  this.clientRepository.save(client);
 	}
 	
 	public void delete(Client client) {
@@ -43,13 +48,11 @@ public class ClientServiceImpl implements IClientService {
 		return clientRepository.findAll();
 	}
 	
-	public Client findFirst1ByNomAndNom(String prenom, String nom) {
-		return clientRepository.findFirst1ByNomAndNom(prenom, nom);
+	public List<Client> findByNomAndNom(String prenom, String nom) {
+		return clientRepository.findByNomAndNom(prenom, nom);
 	}
-	@Override
-	public Client save(Client client) {
-		// TODO Auto-generated method stub
-		return null;
+	
+	
 	
 }
-}
+	

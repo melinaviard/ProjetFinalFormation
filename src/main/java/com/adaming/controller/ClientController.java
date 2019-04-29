@@ -3,7 +3,9 @@ package com.adaming.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -15,43 +17,64 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.adaming.service.ClientServiceImpl;
+import com.adaming.service.IClientService;
 import com.adaming.entity.Client;
+import com.adaming.entity.Vehicule;
 
+/**
+ * 
+ * @author IN-LY-023
+ *
+ */
 
 @RestController
 @RequestMapping("/client")
 public class ClientController {
-	
+
 	@Autowired
-	ClientServiceImpl clientService;
+	IClientService clientService;
 	
+	public ClientController(ClientServiceImpl clientServiceImpl) {
+		this.clientService = clientServiceImpl;
+	}
+
 	//Get method
 	@GetMapping(value = "/all_client")
-
 	public List<Client> findAll() {
 		return clientService.findAll();
 	}
 
-	//Add method
-	public Client addClient(@RequestBody Client client) {
-		System.out.println(client.getNom());
-		return this.clientService.add(client);
+	//add method
+		@PostMapping("/addclient")
+	public Client save(@RequestBody Client client) {
+	       clientService.save(client);
+	        return client;
 	}
 
 	//Update method
-	@PutMapping("/{id}")
-	public Client updateClient(@RequestBody Client client, @PathVariable int id_client) {
-		if (clientService.findById(id_client) == null) {
-			return null;
-		} else {
-			return clientService.add(client);
-		}
-	}
+	@PutMapping("/update")
+	public ResponseEntity<Client> updateClient(Client client) {
+//		if (clientService.findById(client.getId_client()) == null) {
+//			return null;
+//		} else {
+//			return clientService.save(client);
+//		}
+		client = this.clientService.update(client);
+		return new ResponseEntity<Client>(client, HttpStatus.OK);
 	
-	@DeleteMapping("/{id}")
-	public void deleteClient(@PathVariable int id_client){
-		if(clientService.findById(id_client)!= null){
-			clientService.delete(clientService.findById(id_client));
-		}
 	}
+
+	@DeleteMapping("/delete")
+	public void deleteClient(@RequestBody Client client){
+			clientService.delete(client);
+		}
+	
+	@GetMapping("/findByName")
+	public  ResponseEntity<List<Client>> findByNomAndNom(@RequestBody String nom, @RequestBody String prenom){			
+	List<Client> clients = this.clientService.findByNomAndNom(nom, prenom);
+	return new ResponseEntity<>(clients, HttpStatus.OK);}
+
+	
+
+	
 }

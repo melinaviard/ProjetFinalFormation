@@ -11,6 +11,8 @@ import javax.persistence.Id;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 
 
 @Entity
@@ -25,12 +27,14 @@ public class Vehicule implements Serializable{
 	private int nombrePlaces;
 	private double consommation;
 	private String emplacement;
-	private Date disponibilite;
+	private String disponibilite;
 	private String etatLieu;
+//	private String Photo;
 	
 	@OneToOne(mappedBy="vehicule")
 	private Reservation reservation;
-	
+	private String photo;
+
 	public Vehicule() {
 		super();
 		// TODO Auto-generated constructor stub
@@ -38,7 +42,7 @@ public class Vehicule implements Serializable{
 
 
 	public Vehicule(int id_vehicule, String type, String marque, int nombrePlaces, double consommation,
-			String emplacement, Date disponibilite, String etatLieu) {
+			String emplacement, String disponibilite, String etatLieu) {
 		super();
 		this.id_vehicule = id_vehicule;
 		this.type = type;
@@ -52,7 +56,7 @@ public class Vehicule implements Serializable{
 	
 	//Sans Id :
 	public Vehicule( String type, String marque, int nombrePlaces, double consommation,
-			String emplacement, Date disponibilite, String etatLieu) {
+			String emplacement, String disponibilite, String etatLieu) {
 		super();
 		this.type = type;
 		this.marque = marque;
@@ -139,12 +143,12 @@ public class Vehicule implements Serializable{
 	}
 
 
-	public Date getDisponibilite() {
+	public String getDisponibilite() {
 		return disponibilite;
 	}
 
 
-	public void setDisponibilite(Date disponibilite) {
+	public void setDisponibilite(String disponibilite) {
 		this.disponibilite = disponibilite;
 	}
 
@@ -157,8 +161,35 @@ public class Vehicule implements Serializable{
 	public void setEtatLieu(String etatLieu) {
 		this.etatLieu = etatLieu;
 	}
+
+
 	
-	
-	
+//	
+//	// Photo added
+//	public String getPhoto() {
+//		return Photo;
+//	}
+//
+//
+//	public void setPhoto(String photo) {
+//		Photo = photo;
+//	}
+//	
+//	
+//	public Vehicule(int id_vehicule, String type, String marque, int nombrePlaces, double consommation,
+//			String emplacement, String disponibilite, String etatLieu, String photo, Reservation reservation) {
+//		super();
+//		this.id_vehicule = id_vehicule;
+//		this.type = type;
+//		this.marque = marque;
+//		this.nombrePlaces = nombrePlaces;
+//		this.consommation = consommation;
+//		this.emplacement = emplacement;
+//		this.disponibilite = disponibilite;
+//		this.etatLieu = etatLieu;
+//		this.photo = photo;
+//		this.reservation = reservation;
+//	}
+
 
 }

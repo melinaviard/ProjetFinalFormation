@@ -57,7 +57,7 @@ public class ServiceClientTest {
 	public void should_store_when_save_is_called() { 
 		LOGGER.info("--------------- Executing should_store_when_save_is_called test Of ClientServiceTest ---------------");
 		Client myClient = new Client();
-		clientService.add(myClient);
+		clientService.save(myClient);
 		Mockito.verify(clientRepository).save(myClient); // pour tracker l'objet
 	}
 
@@ -103,7 +103,7 @@ public class ServiceClientTest {
 	@Test
 	public void should_search_by_user_when_findByUserCreator_is_called() {
 		LOGGER.info("--------------- Executing should_search_by_user_when_findByUserCreator_is_called test Of ClientServiceTest  ---------------");
-		clientService.findFirst1ByNomAndNom(new String ("prenom"), new String ("nom"));
-		Mockito.verify(clientRepository).findFirst1ByNomAndNom(new String ("prenom"), new String ("nom"));
+		clientService.findByNomAndNom(new String ("prenom"), new String ("nom"));
+		Mockito.verify(clientRepository).findByNomAndNom(new String ("prenom"), new String ("nom"));
 	}
 }

@@ -6,14 +6,16 @@ import org.springframework.stereotype.Service;
 
 import com.adaming.entity.Client;
 
-
+/**
+ * 
+ * @author IN-LY-023
+ *
+ */
 
 public interface IClientService {
 
-		public Client add (Client client);
+		public Client save (Client client);
 	
-		public Client save(Client client);
-
 		public Client update(Client client);
 
 		public void delete(Client client);
@@ -22,6 +24,6 @@ public interface IClientService {
 
 		public List<Client> findAll();
 
-		public Client findFirst1ByNomAndNom(String firstName, String lastName);
+		public List<Client> findByNomAndNom(String nom, String prenom);
 
 }
